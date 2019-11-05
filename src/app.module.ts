@@ -9,6 +9,8 @@ import { FoassController } from './foass/foass.controller';
 import { FoassModule } from './foass/foass.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigService } from './config/config.service';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { ConfigService } from './config/config.service';
       }),
       inject: [ConfigService],
     }),
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController, OpinionsController, FoassController],
   providers: [AppService, OpinionsService, FoassService],
