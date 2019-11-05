@@ -1,6 +1,6 @@
 import { FoassService, Message } from './foass.service';
 import { Controller, Get, Post, Redirect, Body } from '@nestjs/common';
-// import { addOpinionDto } from './dto/opinion.dto';
+// import { AddOpinionDto } from './dto/opinion.dto';
 
 @Controller('foass')
 export class FoassController {

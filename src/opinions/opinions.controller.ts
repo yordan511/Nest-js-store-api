@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Redirect, Body } from '@nestjs/common';
-import { addOpinionDto } from './dto/opinion.dto';
+import { AddOpinionDto } from './dto/opinion.dto';
 import { Opinion } from './interfaces/opinion.interface';
 import { OpinionsService } from './opinions.service';
 
@@ -14,12 +14,12 @@ export class OpinionsController {
   }
 
   @Post()
-  async add(@Body() dto: addOpinionDto) {
+  async add(@Body() dto: AddOpinionDto) {
     try {
       this.opinionService.create(dto);
       return `Success adding ${dto}`;
     } catch (e) {
-      console.log(e);
+      return e;
     }
   }
 }
