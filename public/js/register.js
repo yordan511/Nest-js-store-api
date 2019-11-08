@@ -22,6 +22,7 @@ async function register() {
         password: password.value,
       }),
     });
+
     console.log('Success logging in');
   } catch (error) {
     console.log(error);
